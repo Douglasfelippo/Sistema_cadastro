@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização</title>
+</head>
+<body>
+       <h1>Atualização de Dados</h1>
+
+        <form action="atualizar_dados.php" method="POST">
+            
+            <label for="nome_falecido">Nome do Falecido:</label>
+            <input type="text" id="nome_falecido" name="nome_falecido" value="<?php echo $nome_falecido; ?>"><br><br>
+
+            <label for="data_falec">Data de Falecimento:</label>
+            <input type="text" id="data_falec" name="data_falec" value="<?php echo $row['data_falec']; ?>" required><br><br>
+
+            <label for="quadra">Quadra:</label>
+            <input type="text" id="quadra" name="quadra" value="<?php echo $row['quadra']; ?>" required><br><br>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" value="<?php echo $row['numero']; ?>" required><br><br>
+
+            <label for="junto_com">Junto com:</label>
+            <input type="text" id="junto_com" name="junto_com" value="<?php echo $row['junto_com']; ?>"><br><br>
+
+            <label for="lote">Lote:</label>
+            <input type="text" id="lote" name="lote" value="<?php echo $row['lote']; ?>" required><br><br>
+
+            <input type="submit" value="Atualizar">
+        </form>
+  
+   
+    
+</body>
+</html>

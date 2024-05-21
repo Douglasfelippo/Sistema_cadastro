@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">    
+    <title>Cadastro de Falecido</title>
+
+</head>
+<body>
+    <div id="menu" align="center">
+        <nav>
+            <button onclick="paginainicial(); return false">Pagina inicial</button>
+            <button onclick="cadastro(); return false">Cadastro</button></li>
+            <button onclick="pesquisar(); return false">Pesquisar</button>
+            
+        </nav>
+    </div>
+    
+<h1>Cadastro de Falecido</h1><br><br>
+    
+         <form action="processa_cadastro.php" method="post">
+
+            <label for="nome"autocomplete="off">Nome do Falecido:</label>
+            <input type="text" id="nome" name="nome" size="70px" placeholder="Digite o Nome do falecido"><br><br>
+
+            <label for="data_falecimento">Data de Falecimento:</label>
+            <input type="date" id="data_falecimento" name="data_falecimento" required><br><br>
+
+            <label for="quadra">Quadra:</label>
+            <input type="text" id="quadra" name="quadra" required placeholder="Digite a Quadra"><br><br>
+
+            <label for="numero">Numero:</label>
+            <input type="text" id="numero" name="numero" required placeholder="Digite o Numero">
+
+            <label for="junto_com">Junto com:</label>
+            <input type="text" id="junto_com" name="junto_com" size="50px" placeholder="Junto com "><br><br>
+
+            <label for="lote">Lote:</label>
+            <input type="text" id="lote" name="lote" required placeholder="Lote"><br><br>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+<script>
+        function paginainicial() {
+            location = "paginainicial.html"
+        }
+        function pesquisar() {
+                    location="pesquisa.html"
+                }
+</script>    
+</body>
+</html>

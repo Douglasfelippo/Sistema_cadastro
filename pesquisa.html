@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Pesquisar</title>
+</head>
+<body align="center">
+    <div id="menu">
+        <nav>
+            <button onclick="paginainicial(); return false">Pagina inicial</button>
+            <button onclick="cadastro(); return false">Cadastro</button>
+            <button onclick="pesquisar(); return false">Pesquisar</button>
+            
+        </nav>
+    </div><br><br><br><br>
+        <form action="pesquisar.php" method="post">
+            <label for="pesquisar"><h1>Pesquisar Falecido:</h1></label>
+            <input type="text" id="pesquisa" name="pesquisa" size="50px" placeholder="Pesquisar o Nome..."><br><br>
+                <input type="submit" value="Procurar">
+            </form>        
+    <script>
+        function paginainicial(){
+            location ="paginainicial.html"
+        }
+        function cadastro(){
+            location ="cadastro.html"
+        }
+    </script>               
+           
+</body>
+</html>
+
+
+
