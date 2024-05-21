@@ -3,12 +3,7 @@ $hostname = "127.0.0.1";
 $usuario = "root"; 
 $senha = ""; 
 $bancodedados = "cadastro";
-        // Verifique se os dados do formulário foram enviados
-        if ($_SERVER["atualizar_dados.php"] == "POST") {}
-            // Verifique se todos os campos obrigatórios estão presentes
-            if (isset($_POST['nome'], $_POST['data_falecimento'], $_POST['quadra'], $_POST['numero'], $_POST['junto_com'], $_POST['lote'])) {}
-                // Conecte-se ao banco de dados
-                    // Substitua 'localhost', 'nome_do_usuario', 'senha' e 'nome_do_banco_de_dados' pelos seus próprios detalhes de conexão
+    
                 $conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
         
         
@@ -16,7 +11,8 @@ $bancodedados = "cadastro";
             die("Erro de conexão: " . $conexao->connect_error);
         }
         
-        // Prepare e execute a declaração SQL para atualizar os dados
+        // Prepara e executa o SQL para atualizar os dados
+        $id = $_POST['id'];
         $nome = $_POST['nome_falecido'];
         $data_falecimento = $_POST['data_falec'];
         $quadra = $_POST['quadra'];
@@ -24,15 +20,16 @@ $bancodedados = "cadastro";
         $junto_com = $_POST['junto_com'];
         $lote = $_POST['lote'];
         
-        $sql = "UPDATE falecido SET nome_falecido='$nome', data_falec='$data_falecimento', quadra='$quadra', numero='$numero', junto_com='$junto_com', lote='$lote' WHERE id=$id";
+        $sql = "UPDATE falecido SET nome_falecido='$nome', data_falec='$data_falecimento', quadra='$quadra', numero='$numero', junto_com='$junto_com', lote='$lote' Where id='$id'";
         
                     if ($conexao->query($sql) === TRUE) {
                         echo "Dados atualizados com sucesso!";
+                        echo "<button onclick='window.location.href=\"pesquisa.html\";'><i class='fas fa-sync'></i> Voltar a Pesquisa</button>";
                     } else {
                         echo "Erro ao atualizar os dados: " . $conexao->error;
                     }
         
-        // Feche a conexão
+        // Fecha a conexão
         $conexao->close();
 
 ?>

@@ -23,14 +23,16 @@ if ($result->num_rows > 0) {
     // Exibir os dados encontrados
     while($row = $result->fetch_assoc()) {
         echo "<div style='font-family: Arial, sans-serif; font-size: 20px; text-align: center;'>";
-            echo "<strong>Nome:</strong> " . $row["nome_falecido"]. "<br>",
+            echo "<strong>Id:</strong>" . $row["id"]. "<br>", 
+                "<strong>Nome:</strong> " . $row["nome_falecido"]. "<br>",
                 "<strong>Data de Falecimento:</strong>" . $row["data_falec"]. "<br>" , 
                 "<strong>Quadra:</strong> " . $row["quadra"]. "<br>" , 
                 "<strong>Numero:</strong> " . $row["numero"]. "<br>" , 
                 "<strong>Junto com:</strong> " . $row["junto_com"]. "<br>" , 
                 "<strong>Lote:</strong> " . $row["lote"]. "<br><br>";
             echo "<button onclick='window.print();'><i class='fas fa-print'></i> Imprimir</button>"; // Botão de impressão com ícone de impressora
-            echo "<button onclick='window.location.href=\"atualizar_dados.php\";'><i class='fas fa-sync'></i> Atualizar</button>";
+            echo "<button onclick='window.location.href=\"atualizar_dados.php?id=" . $row["id"] . "\";'><i class='fas fa-sync'></i> Atualizar</button>";
+
 
         
     }

@@ -10,7 +10,9 @@ $bancodedados = "cadastro";
                     }
 
 
-$termo_pesquisa = $_POST['pesquisa'];
+                    if(isset($_POST['pesquisa'])) {
+                        $termo_pesquisa = $_POST['pesquisa'];
+                    }
 
 // Consulta SQL para buscar os dados no banco de dados
 $sql = "SELECT * FROM falecido WHERE nome_falecido LIKE '%$termo_pesquisa%'";
@@ -23,6 +25,7 @@ $result = $conexao->query($sql);
         $row = $result->fetch_assoc();
     
             // Preencha as variáveis com os dados do banco de dados
+            $id = $row["id"];
             $nome_falecido = $row["nome_falecido"];
             $data_falec = $row["data_falec"];
             $quadra = $row["quadra"];

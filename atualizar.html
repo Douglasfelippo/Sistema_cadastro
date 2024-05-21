@@ -8,8 +8,11 @@
 <body>
        <h1>Atualização de Dados</h1>
 
-        <form action="atualizar_dados.php" method="POST">
+        <form action="processa_atualizacao.php" method="POST">
             
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" value="<?php echo $id; ?>"><br><br>
+
             <label for="nome_falecido">Nome do Falecido:</label>
             <input type="text" id="nome_falecido" name="nome_falecido" value="<?php echo $nome_falecido; ?>"><br><br>
 
