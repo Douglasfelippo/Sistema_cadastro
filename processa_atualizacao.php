@@ -11,7 +11,7 @@ $bancodedados = "cadastro";
                     // Substitua 'localhost', 'nome_do_usuario', 'senha' e 'nome_do_banco_de_dados' pelos seus próprios detalhes de conexão
                 $conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
         
-        // Verifique a conexão
+        
         if ($conexao->connect_error) {
             die("Erro de conexão: " . $conexao->connect_error);
         }
