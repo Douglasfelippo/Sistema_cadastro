@@ -30,8 +30,13 @@ if ($result->num_rows > 0) {
                 "<strong>Numero:</strong> " . $row["numero"]. "<br>" , 
                 "<strong>Junto com:</strong> " . $row["junto_com"]. "<br>" , 
                 "<strong>Lote:</strong> " . $row["lote"]. "<br><br>";
-            echo "<button onclick='window.print();'><i class='fas fa-print'></i> Imprimir</button>"; // Botão de impressão com ícone de impressora
-            echo "<button onclick='window.location.href=\"atualizar_dados.php?id=" . $row["id"] . "\";'><i class='fas fa-sync'></i> Atualizar</button>";
+                echo "<button onclick='window.print();'><i class='fas fa-print'></i> Imprimir</button>";
+                echo "<form action='atualizar_dados.php' method='post' style='display:inline;'>";
+                echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
+                echo "<button type='submit'><i class='fas fa-sync'></i> Atualizar</button>";
+                echo "</form>";
+            echo "</div>";    
+           
 
 
         
