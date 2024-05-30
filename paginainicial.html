@@ -14,6 +14,8 @@
                 <button onclick="paginainicial(); return false">Pagina inicial</button>    
                 <button onclick="cadastro(); return false">Cadastro</button>
                 <button onclick="pesquisar(); return false">Pesquisar</button>
+                <button onclick="logout(); return false">Sair</button>
+               
             
     </div>
         <script>
@@ -22,7 +24,16 @@
         }
                 function pesquisar() {
                     location="pesquisa.html"
-                }
+        }
+                function logout() {
+                    localStorage.removeItem('userLoggedIn');
+                        location = "password.html";
+        }
+        
+
+        
+
+
         </script>    
         
         
